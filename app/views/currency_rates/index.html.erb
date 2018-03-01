@@ -1,0 +1,7 @@
+Average:
+usd_sell<%= @average_values[:usd_sell] %>
+usd_buy<%= @average_values[:usd_buy] %>
+eur_sell<%= @average_values[:eur_sell] %>
+eur_buy<%= @average_values[:eur_buy] %>
+
+<%= column_chart @currencies.pluck(:usd_sell) %>
