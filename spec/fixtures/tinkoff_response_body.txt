@@ -1,0 +1,14 @@
+{"payload":
+  {"rates":[
+    {"category":"DepositPayments",
+    "fromCurrency":{"name":"USD","code":840},
+    "toCurrency":{"name":"RUB","code":643},
+    "buy":56.0,
+    "sell":58.3},
+    {"category":"DepositPayments",
+    "fromCurrency":{"name":"EUR","code":978},
+    "toCurrency":{"name":"RUB","code":643},
+    "buy":69.0,
+    "sell":71.8}]
+  }
+}
