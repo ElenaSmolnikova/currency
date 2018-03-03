@@ -1,7 +1,7 @@
 class CurrencyParser
   attr_accessor :rates
   def initialize(response)
-    @rates = response.fetch('payload', {}).fetch('rates', {}) 
+    @rates = response.fetch('payload', {}).fetch('rates', [])
   end
 
   def rub_deposit_payments

@@ -21,7 +21,7 @@ RSpec.describe CurrencyApi do
     }
   }
 
-  it "parsers response to hash" do
+  it "returns rates" do
     expect(described_class.get_rate)
     .to eq(right_result_hash)
   end
@@ -43,7 +43,7 @@ RSpec.describe CurrencyApi do
     }
   }
 
-  it "parsers response to hash" do
+  it "calls :new and :rub_deposit_payments for CurrencyParser" do
     stub = double()
     expect(CurrencyParser)
       .to receive(:new)
