@@ -1,13 +1,14 @@
 module RateUpdater
   def self.perform
     updated_at = DateTime.now.beginning_of_hour
-      rate = CurrencyApi.get_rate
-      CurrencyRate.first_or_create!(updated_at: updated_at - 1.day).update_attributes!(
+      api_rate = CurrencyApi.get_rate
+      currency_rate = CurrencyRate.where(updated_at: updated_at - 1.day).first_or_create!
+      currency_rate.update_attributes!(
         updated_at: updated_at,
-        usd_sell: rate[:usd_sell],
-        usd_buy: rate[:usd_buy],
-        eur_sell: rate[:eur_sell],
-        eur_buy: rate[:eur_buy]
+        usd_sell: api_rate[:usd_sell],
+        usd_buy: api_rate[:usd_buy],
+        eur_sell: api_rate[:eur_sell],
+        eur_buy: api_rate[:eur_buy]
       )
   end
 end
